@@ -7,7 +7,7 @@ export const img = () => {
 
 		.pipe(app.plugins.newer(app.path.build.images))
 	      .pipe(webp({
-	      	quality: 97,
+	      	quality: 100,
 	      }))
 			.pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'IMG', showFiles: true })))
 	      .pipe(app.gulp.dest(app.path.build.images))
