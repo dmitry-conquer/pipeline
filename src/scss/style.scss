@@ -921,3 +921,113 @@ body {
     line-height: 1.4; /* 140% */
   }
 }
+
+// Features
+.features {
+  @include av("padding-top", 140, 37);
+  @include av("padding-bottom", 135, 117);
+  background-color: $color-light-bg;
+  &__container {
+    position: relative;
+  }
+  &__inner {
+    width: 100%;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 21px;
+    row-gap: 18px;
+    grid-auto-rows: 178px;
+    @media (max-width: ($lg)) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @media (max-width: ($md)) {
+      display: flex;
+      width: 100%;
+      column-gap: 0;
+    }
+  }
+  &__title {
+    color: #020b2c;
+    @include av("font-size", 45, 30);
+    font-weight: 700;
+    line-height: 1.11; /* 111.111% */
+    span {
+      color: $color-primary;
+    }
+    @media (max-width: ($md)) {
+      margin-bottom: 27px;
+    }
+  }
+  &__mouse {
+    position: absolute;
+    right: -11%;
+    bottom: -19%;
+    width: 187px;
+    height: 235.94px;
+    @media (max-width: 1200px) {
+      right: 0;
+      bottom: -12%;
+      width: 94.316px;
+      height: 119px;
+    }
+    @media (max-width: ($md)) {
+      right: 2%;
+      bottom: -42%;
+    }
+    @media (max-width: ($sm)) {
+      bottom: -52%;
+    }
+  }
+}
+.features-item {
+  &_title {
+    grid-column: 1 / span 3;
+    display: flex;
+    align-items: center;
+    @media (max-width: ($md)) {
+    }
+    @media (max-width: ($md)) {
+      display: block;
+    }
+  }
+  &_box {
+    border-radius: 10px;
+    background: #232323;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 25px;
+    padding: 23px;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: $color-primary;
+      .red-box {
+        display: none;
+      }
+      .white-box {
+        display: block;
+      }
+    }
+    .white-box {
+      display: none;
+    }
+    h3 {
+      color: #fff;
+      text-align: center;
+      @include av("font-size", 20, 14);
+      font-weight: 700;
+    }
+    @media (max-width: ($md)) {
+      flex-shrink: 0;
+      height: 180px;
+      row-gap: 15px;
+    }
+    @media (max-width: ($sm)) {
+      height: 124px;
+    }
+  }
+}

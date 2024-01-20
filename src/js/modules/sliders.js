@@ -1,6 +1,27 @@
 import Swiper, { Autoplay } from "swiper";
 
 const infinitySlides = document.querySelectorAll(".slider-infinity");
+const featuresInner = document.querySelector(".features__inner");
+let featuresSlider = null;
+
+function initFeaturesSlider() {
+  if (featuresInner) {
+    if (window.innerWidth < 768 && !featuresSlider) {
+      featuresSlider = new Swiper(".features__inner", {
+        wrapperClass: "features__grid",
+        slideClass: "features-item_box",
+        modules: [],
+        spaceBetween: 16,
+        speed: 1000,
+        slidesPerView: 2.1,
+        grabCursor: true,
+      });
+    } else if (window.innerWidth >= 768 && featuresSlider) {
+      featuresSlider.destroy();
+      featuresSlider = null;
+    }
+  }
+}
 
 infinitySlides.forEach(slider => {
   if (slider) {
@@ -27,49 +48,8 @@ infinitySlides.forEach(slider => {
           spaceBetween: 60,
         },
       },
-
-      // Events
-      /*
-                on: {
-                   // - - - - - - - [custom fraction] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                   init: function (swiper) {
-                     const allSliders = document.querySelector('.slider__all');
-                     allSliders.innerHTML = swiper.slides.length;
-                     console.log(allSliders.innerHTML);
-                   },
-                   slideChange: function (swiper) {
-                     const currentSlide = document.querySelector('.slider__current');
-                     currentSlide.innerHTML = swiper.realIndex + 1;
-                     console.log(currentSlide.innerHTML);
-                   },
-       
-       
-                   // - - - - - - - [tabs] - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-                   init: function(swiper) {
-                      const captions = document.querySelectorAll('.captions-courses__item');
-                      captions.forEach((item, index) => {
-                         item.addEventListener('click', function(e) {
-                            swiper.slideTo(index, 800)
-                         });
-                      })
-                   },
-                   slideChange: function(swiper) {
-                      const captions = document.querySelectorAll('.captions-courses__item');
-                      captions.forEach((item) => {
-                         item.classList.remove('_active');
-                      })
-                      captions[swiper.realIndex].classList.add('_active');
-                   },
-                },
-                   */
     });
   }
 });
-
-// stop slider on mouseenter
-// defaultSlider.el.addEventListener('mouseenter', () => {
-//    defaultSlider.autoplay.stop();
-// });
-// defaultSlider.el.addEventListener('mouseleave', () => {
-//    defaultSlider.autoplay.start();
-// });
+initFeaturesSlider();
+window.addEventListener("resize", initFeaturesSlider);
