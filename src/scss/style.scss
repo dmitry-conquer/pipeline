@@ -170,7 +170,7 @@ body {
 
 [class*="__container"] {
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0 22px;
   max-width: 1200px;
 }
 
@@ -241,6 +241,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
+  z-index: 999;
   @include av("padding-top", 33, 9);
   @include av("padding-bottom", 108, 32);
   &__container {
@@ -380,8 +381,84 @@ body {
 
 // hero
 .hero {
-  min-height: 100vh;
   background-color: $color-bg;
+  @include av("padding-top", 221, 76);
+  @include av("padding-bottom", 210, 61);
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    column-gap: 37px;
+    @media (max-width: ($lg)) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 80px;
+    }
+    @media (max-width: ($sm)) {
+      row-gap: 46.2px;
+    }
+  }
+  &__column {
+    width: 50%;
+    @media (max-width: ($lg)) {
+      width: 100%;
+    }
+  }
+  &__contet {
+  }
+  &__title {
+    color: #fff;
+    @include av("font-size", 45, 30);
+    font-weight: 700;
+    line-height: 1; /* 100% */
+    margin-bottom: em(20, 45);
+    span {
+      color: $color-primary;
+    }
+    @media (max-width: ($sm)) {
+       max-width: 80%;
+    }
+  }
+  &__text {
+    color: #c1c1c1;
+    @include av("font-size", 20, 16);
+    font-weight: 300;
+    line-height: 1.35; /* 135% */
+    margin-bottom: em(33, 20);
+    @media (max-width: ($sm)) {
+      max-width: 80%;
+   }
+  }
+  &__button {
+    width: 227px;
+    @media (max-width: ($sm)) {
+      margin: 0 auto;
+    }
+  }
+  &__video {
+  }
+}
+.video-hero {
+  position: relative;
+  &__inner {
+    background-color: #4c4c4c;
+    padding: 12px 15px 13px 15px;
+    z-index: 20;
+    position: relative;
+    @media (max-width: ($sm)) {
+      padding: 6px 7px;
+    }
+  }
+  &__head {
+    position: absolute;
+    width: 88px;
+    left: -25px;
+    top: -68px;
+    @media (max-width: ($sm)) {
+      width: 42.5px;
+      left: -11px;
+      top: -33px;
+    }
+  }
 }
 
 // Footer
