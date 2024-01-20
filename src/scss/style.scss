@@ -637,3 +637,31 @@ body {
     font-weight: 300;
   }
 }
+
+// schedule
+.schedule {
+background-color: $color-bg;
+@include av('padding-top', 36, 22);
+@include av('padding-bottom', 37, 35);
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+@media (max-width: ($md)) {
+   flex-direction:column;
+   row-gap: 20px;
+}
+  }
+  &__title {
+    color: #fff;
+    text-align: center;
+    @include av('font-size', 35, 25);
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  &__button {
+    max-width: 273px;
+    width: 100%;
+  }
+}
