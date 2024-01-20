@@ -1,0 +1,18 @@
+$container-layout-width: 1200; // Real container template width
+$container-padding: 15; 
+
+$container-max-width: calc($container-layout-width + ($container-padding * 2)); // Project container template width
+$section-gap: 130px;
+
+/* header-height */
+$xl-header: 90px;
+$lg-header: 70px;
+$md-header: 50px;
+$sm-header: 45px;
+
+/* break-points */
+$xl: 1199.98px;
+$lg: 991.98px;
+$md: 767.98px;
+$sm: 575.98px;
+

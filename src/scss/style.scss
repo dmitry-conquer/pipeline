@@ -1,0 +1,79 @@
+/* Import lib styles  */
+// @import '../../node_modules/swiper/swiper.scss';
+// @import '../../node_modules/swiper/modules/navigation/navigation.scss';
+// @import '../../node_modules/swiper/modules/autoplay/autoplay.scss';
+// @import '../../node_modules/swiper/modules/pagination/pagination.scss';
+// @import '../../node_modules/swiper/modules/scrollbar/scrollbar.scss';
+// @import '../../node_modules/nouislider/dist/nouislider.min';
+// @import '../../node_modules/aos/src/sass/aos.scss';
+// @import '../../node_modules/choices.js/src/styles/choices.scss';
+// "./lib/tips";
+
+
+@import "./utils/functions",
+        "./utils/variables",
+        "./utils/mixins";
+@import "fonts",
+        "normalize";
+
+html {
+   scroll-behavior: smooth;
+   // scroll-padding-top: 30px;
+}
+
+body {
+   // font-family: "Roboto", sans-serif;
+   // font-weight: 400;
+   // font-size: 16px;
+}
+
+[class*="__container"] {
+   margin: 0 auto;
+   padding: 0 $container-padding + px;
+   max-width: $container-max-width + px;
+}
+
+/* One side container */
+.left-container {
+@media (min-width: ($lg)) {
+   margin: 0;
+   padding: 0 0 0 calc((100% - ($container-max-width * 1px)) / 2 + $container-padding * 1px);
+   max-width: none;
+   }
+}
+
+.right-container {
+@media (min-width: ($lg)) {
+   margin: 0;
+   padding: 0 calc((100% - ($container-max-width * 1px)) / 2 + $container-padding * 1px) 0 0;
+   max-width: none;
+   }
+}
+
+
+ /* Only screen readers + google */
+.sr-only {
+   position: absolute;
+   overflow: hidden;
+   margin: -1px;
+   border: 0;
+   padding: 0;
+   width: 1px;
+   height: 1px;
+   white-space: nowrap;
+   clip: rect(0, 0, 0, 0);
+}
+
+
+// >> - - - - - - - - - - - - - [current project styles] - - - - - - - - - - - - - - - - -
+
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   min-height: 100%;
+
+   main {
+      flex: 1 1 auto;
+   }
+}
