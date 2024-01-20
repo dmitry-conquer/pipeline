@@ -922,6 +922,55 @@ body {
   }
 }
 
+//AMP video
+.amp {
+  background-color: $color-bg;
+  @include av("padding-top", 112, 23);
+  @include av("padding-bottom", 111, 50);
+  &__container {
+    display: flex;
+    column-gap: 33px;
+    align-items: center;
+    @media (max-width: ($lg)) {
+       flex-direction: column;
+       row-gap: 60px;
+    }
+    @media (max-width: ($md)) {
+      row-gap: 27px;
+   }
+  }
+  &__player {
+    width: 49%;
+    @media (max-width: ($lg)) {
+      width: 100%;
+   }
+  }
+  &__content {
+    width: 51%;
+    @media (max-width: ($lg)) {
+      width: 100%;
+   }
+  }
+  &__title {
+    color: #fff;
+    @include av("font-size", 55, 35);
+    font-weight: 700;
+    margin-bottom: 17px;
+    span {
+      color: $color-primary;
+    }
+  }
+  &__text {
+    color: #c1c1c1;
+    @include av("font-size", 20, 16);
+
+    line-height: 1.5; /* 150% */
+    span {
+      font-weight: 700;
+    }
+  }
+}
+
 // Features
 .features {
   @include av("padding-top", 140, 37);
