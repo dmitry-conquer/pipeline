@@ -1,8 +1,8 @@
 import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
+import "./modules/sliders.js";
 
 function app() {
   useDynamicAdapt("max");
-
 
   /**
    * Burger menu

@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap");
 
+@import "../../node_modules/swiper/swiper.scss";
+@import "../../node_modules/swiper/modules/navigation/navigation.scss";
+@import "../../node_modules/swiper/modules/pagination/pagination.scss";
+
 /* Vars */
 $xl: 1319.98px;
 $lg: 1023.98px;
@@ -233,6 +237,25 @@ body {
   }
 }
 
+/* -------------------------------------------------------- */
+.slider-infinity {
+  width: 100%;
+}
+.slider-infinity-wrapper {
+  display: flex;
+  width: 100%;
+  transition-timing-function: linear;
+}
+.slider-infinity-slide {
+  flex-shrink: 0;
+  max-height: 130px;
+  object-fit: contain;
+  display: block;
+  aspect-ratio: 16/9;
+  @media (max-width: ($md)) {
+    width: 30%;
+  }
+}
 /* -------------------------------------------------------- */
 
 // Header
@@ -647,7 +670,7 @@ body {
   &__header {
     text-align: center;
     @media (max-width: ($lg)) {
-       margin-bottom: 11px;
+      margin-bottom: 11px;
     }
   }
   &__title {
@@ -792,5 +815,25 @@ body {
   &__button {
     max-width: 273px;
     width: 100%;
+  }
+}
+
+// Trusted
+.trusted {
+  background-color: $color-light-bg;
+  @include av("padding-top", 52, 33);
+  @include av("padding-bottom", 68, 43);
+  &__title {
+    color: #343434;
+    text-align: center;
+    @include av("font-size", 45, 30);
+    font-weight: 700;
+    margin-bottom: 35px;
+    span {
+      color: $color-primary;
+    }
+    @media (max-width: ($sm)) {
+      margin-bottom: 20px;
+    }
   }
 }
