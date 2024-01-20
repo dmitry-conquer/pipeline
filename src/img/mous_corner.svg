@@ -1,0 +1,18 @@
+<svg width="121" height="123" viewBox="0 0 121 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="27.0656" cy="44.6444" rx="11.6847" ry="11.6615" transform="rotate(54.4219 27.0656 44.6444)" fill="#161616"/>
+<ellipse cx="71.4219" cy="25.3127" rx="11.6847" ry="11.6615" transform="rotate(54.4219 71.4219 25.3127)" fill="#161616"/>
+<circle cx="61.1102" cy="68.5595" r="38.6944" transform="rotate(54.4219 61.1102 68.5595)" fill="#161616"/>
+<circle cx="61.1103" cy="68.5594" r="33.461" transform="rotate(54.4219 61.1103 68.5594)" fill="url(#paint0_linear_6246_237)"/>
+<ellipse cx="47.758" cy="64.2383" rx="5.78865" ry="13.7842" transform="rotate(-28.0799 47.758 64.2383)" fill="white"/>
+<ellipse cx="47.758" cy="64.2383" rx="5.78865" ry="13.7842" transform="rotate(-28.0799 47.758 64.2383)" fill="white"/>
+<ellipse cx="67.648" cy="54.071" rx="5.78865" ry="13.7842" transform="rotate(-28.0799 67.648 54.071)" fill="white"/>
+<ellipse cx="67.648" cy="54.071" rx="5.78865" ry="13.7842" transform="rotate(-28.0799 67.648 54.071)" fill="white"/>
+<circle cx="34.641" cy="94.4641" r="12.479" transform="rotate(54.4219 34.641 94.4641)" fill="#232323"/>
+<circle cx="34.8653" cy="94.2989" r="9.48998" transform="rotate(54.4219 34.8653 94.2989)" fill="#FF0000"/>
+<defs>
+<linearGradient id="paint0_linear_6246_237" x1="69.1866" y1="70.907" x2="101.898" y2="69.4965" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF0000"/>
+<stop offset="1" stop-color="#FF0000" stop-opacity="0"/>
+</linearGradient>
+</defs>
+</svg>

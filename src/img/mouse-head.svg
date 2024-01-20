@@ -1,0 +1,16 @@
+<svg width="106" height="110" viewBox="0 0 106 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse cx="26.8683" cy="28.859" rx="11.496" ry="11.4731" transform="rotate(72.0082 26.8683 28.859)" fill="#FF0000"/>
+<ellipse cx="74.215" cy="23.9137" rx="11.496" ry="11.4731" transform="rotate(72.0082 74.215 23.9137)" fill="#FF0000"/>
+<circle cx="51.6886" cy="61.408" r="38.0693" transform="rotate(72.0082 51.6886 61.408)" fill="#FF0000"/>
+<circle cx="51.6887" cy="61.4083" r="32.9204" transform="rotate(72.0082 51.6887 61.4083)" fill="url(#paint0_linear_4264_1457)"/>
+<ellipse cx="39.0513" cy="53.9672" rx="5.69514" ry="13.5615" transform="rotate(-1.51551 39.0513 53.9672)" fill="white"/>
+<ellipse cx="39.0513" cy="53.9672" rx="5.69514" ry="13.5615" transform="rotate(-1.51551 39.0513 53.9672)" fill="white"/>
+<ellipse cx="64.4089" cy="52.6459" rx="5.69514" ry="13.5615" transform="rotate(-0.864472 64.4089 52.6459)" fill="white"/>
+<ellipse cx="64.4089" cy="52.6459" rx="5.69514" ry="13.5615" transform="rotate(-0.864472 64.4089 52.6459)" fill="white"/>
+<defs>
+<linearGradient id="paint0_linear_4264_1457" x1="64.5446" y1="63.3871" x2="81.3992" y2="65.6055" gradientUnits="userSpaceOnUse">
+<stop/>
+<stop offset="1" stop-opacity="0.72"/>
+</linearGradient>
+</defs>
+</svg>
