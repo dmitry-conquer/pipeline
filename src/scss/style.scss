@@ -8,7 +8,7 @@ $sm: 519.98px;
 
 $color-primary: #ec1721;
 $color-bg: #232323;
-$color-light-bg: linear-gradient(0deg, #f0f0f0 0%, rgba(240, 240, 240, 0) 82.36%);
+$color-light-bg: #f5f5f5;
 
 /* Functions */
 @function em($px, $cur-fz) {
@@ -182,7 +182,7 @@ body {
 
   main {
     min-height: 1000vh; // change!
-    background: $color-light-bg;
+    background: #fff;
     flex: 1 1 auto;
   }
 }
@@ -415,7 +415,7 @@ body {
       color: $color-primary;
     }
     @media (max-width: ($sm)) {
-       max-width: 80%;
+      max-width: 80%;
     }
   }
   &__text {
@@ -426,7 +426,7 @@ body {
     margin-bottom: em(33, 20);
     @media (max-width: ($sm)) {
       max-width: 80%;
-   }
+    }
   }
   &__button {
     width: 227px;
@@ -572,5 +572,68 @@ body {
     img {
       width: 100%;
     }
+  }
+}
+
+// Avatars
+.avatars {
+  background-color: $color-light-bg;
+  @include av("padding-top", 57, 41);
+  @include av("padding-bottom", 57, 43);
+  &__container {
+    padding: 0 32px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+    column-gap: 34.5px;
+    max-width: 950px;
+    margin: 0 auto;
+    @media (max-width: ($lg)) {
+      flex-direction: column;
+      row-gap: 25px;
+    }
+    @media (max-width: ($sm)) {
+      row-gap: 16px;
+    }
+  }
+  &__images {
+    flex: 1 1 40%;
+    display: flex;
+  }
+  &__image {
+    width: 91px;
+    height: 91px;
+    border-radius: 50%;
+    border: 11px solid $color-primary;
+    object-fit: cover;
+    &:not(:first-child) {
+      margin-left: -20px;
+    }
+    @media (max-width: ($sm)) {
+      width: 65px;
+      height: 65px;
+      border: 8px solid $color-primary;
+    }
+  }
+  &__content {
+    flex: 1 0 60%;
+  }
+  &__title {
+    color: #000;
+    @include av("font-size", 25, 20);
+    font-weight: 700;
+    margin-bottom: em(9, 25);
+  }
+  &__subtitle {
+    color: $color-primary;
+    @include av("font-size", 22, 18);
+    font-weight: 700;
+    margin-bottom: em(10, 22);
+  }
+  &__text {
+    color: #000;
+    @include av("font-size", 20, 16);
+    font-weight: 300;
   }
 }
