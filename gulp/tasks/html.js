@@ -1,13 +1,13 @@
-import fileinclude from 'gulp-file-include';
-import htmlmin from 'gulp-htmlmin';
-import versionNumber from 'gulp-version-number';
+import fileinclude from "gulp-file-include";
+import htmlmin from "gulp-htmlmin";
+import versionNumber from "gulp-version-number";
 
 export const html = () => {
   return (
     app.gulp
       .src(app.path.src.html)
       .pipe(fileinclude())
-      
+
       // Prevents site caching. Comment out in production mode
       // .pipe(
       //   app.plugins.if(
@@ -30,8 +30,8 @@ export const html = () => {
         app.plugins.if(
           app.isBuild,
           htmlmin({
-            collapseWhitespace: true,
-            removeComments: true,
+            // collapseWhitespace: true,
+            // removeComments: true,
             // preserveLineBreaks: true,
             // removeAttributeQuotes: true,
             // removeRedundantAttributes: true,
@@ -39,10 +39,10 @@ export const html = () => {
             // removeStyleLinkTypeAttributes: true,
             // sortClassName: true,
             // useShortDoctype: true,
-          })
-        )
+          }),
+        ),
       )
-      .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: 'HTML', showFiles: true })))
+      .pipe(app.plugins.if(app.isBuild, app.plugins.size({ title: "HTML", showFiles: true })))
       .pipe(app.gulp.dest(app.path.build.html))
       .pipe(app.plugins.browserSync.stream())
   );
