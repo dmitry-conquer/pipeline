@@ -175,7 +175,7 @@ body {
 [class*="__container"] {
   margin: 0 auto;
   padding: 0 22px;
-  max-width: 1200px;
+  max-width: 1224px;
 }
 
 .wrapper {
@@ -1175,8 +1175,8 @@ body {
 
 // Trials
 .trial {
-  &__container {
-  }
+  @include av("padding-bottom", 96, 49);
+
   &__header {
     text-align: center;
     @include av("margin-bottom", 50, 25);
@@ -1329,5 +1329,100 @@ body {
   }
   &__form {
     @include av("margin-bottom", 39, 8);
+  }
+}
+
+// faq
+.faq {
+  background-color: $color-light-bg;
+  @include av("padding-top", 82, 42);
+  @include av("padding-bottom", 91, 55);
+  &__title {
+    color: #343434;
+    text-align: center;
+    @include av("font-size", 45, 35);
+    font-weight: 700;
+    margin-bottom: 35px;
+    @media (max-width: ($sm)) {
+      margin-bottom: 22px;
+    }
+    span {
+      color: $color-primary;
+    }
+  }
+  &__body {
+  }
+}
+.faq-item {
+  padding: 20px 35px 0 35px;
+  background-color: #fff;
+  &:not(:last-child) {
+    margin-bottom: 9px;
+  }
+  @media (max-width: ($sm)) {
+    padding: 12px 12px 0 18px;
+  }
+  &__question {
+    color: #555;
+    @include av("font-size", 25, 15);
+    line-height: 1.12;
+    padding-bottom: 19px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: border-bottom 0.3s ease;
+    .q-is-close {
+      display: block;
+    }
+    .q-is-open {
+      display: none;
+    }
+    &.active-spoiler {
+      border-bottom: 3px solid #efefef;
+      .q-is-close {
+        display: none;
+      }
+      .q-is-open {
+        display: block;
+      }
+    }
+    @media (max-width: ($sm)) {
+       padding-bottom: 9px;
+    }
+  }
+  &__answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    p {
+      color: #6c6c6c;
+      @include av("font-size", 25, 15);
+      font-weight: 300;
+      line-height: 1.4;
+      position: relative;
+      padding: 21px 0 31px 45px;
+      &::before {
+        content: "";
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: #6c6c6c;
+        border-radius: 50%;
+        top: 37px;
+        left: 20px;
+      }
+      @media (max-width: ($sm)) {
+        line-height: 1.2;
+        padding: 16px 0 16px 25px;
+        &::before {
+          left: 10px;
+          top: 23px;
+        }
+      }
+    }
   }
 }
