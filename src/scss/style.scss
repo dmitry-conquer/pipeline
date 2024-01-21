@@ -404,13 +404,58 @@ body {
 
 // hero
 .hero {
+  position: relative;
   background-color: $color-bg;
   @include av("padding-top", 221, 76);
   @include av("padding-bottom", 210, 61);
+  &__l-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+  }
+  &__rg-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+    @media (max-width: ($lg)) {
+      display: none;
+    }
+  }
+  &__rr-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    position: absolute;
+    right: 0;
+    bottom: -12%;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    @media (max-width: ($lg)) {
+      width: 40%;
+      height: 40%;
+      bottom: auto;
+      top: 0;
+    }
+  }
   &__container {
     display: flex;
     align-items: flex-start;
     column-gap: 37px;
+    position: relative;
+    z-index: 6;
     @media (max-width: ($lg)) {
       flex-direction: column;
       align-items: center;
@@ -437,7 +482,7 @@ body {
     span {
       color: $color-primary;
     }
-    @media (max-width: ($sm)) {
+    @media (max-width: ($lg)) {
       max-width: 80%;
     }
   }
@@ -447,7 +492,7 @@ body {
     font-weight: 300;
     line-height: 1.35; /* 135% */
     margin-bottom: em(33, 20);
-    @media (max-width: ($sm)) {
+    @media (max-width: ($lg)) {
       max-width: 80%;
     }
   }
@@ -469,6 +514,17 @@ body {
     position: relative;
     @media (max-width: ($sm)) {
       padding: 6px 7px;
+    }
+  }
+  &__hands {
+    position: absolute;
+    left: -8px;
+    top: -11px;
+    z-index: 30;
+    @media (max-width: ($sm)) {
+      width: 32px;
+      left: -4px;
+      top: -6px;
     }
   }
   &__head {
@@ -665,6 +721,21 @@ body {
 .solutions {
   @include av("padding-top", 75, 41);
   @include av("padding-bottom", 115, 41);
+  position: relative;
+  &__lr-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    position: absolute;
+    left: 0;
+    bottom: -27%;
+    width: 75%;
+    height: 75%;
+    z-index: 1;
+    @media (max-width: ($lg)) {
+      display: none;
+    }
+  }
   &__container {
   }
   &__header {
@@ -842,7 +913,24 @@ body {
 .deals {
   @include av("padding-top", 87, 35);
   @include av("padding-bottom", 136, 75);
+  position: relative;
+  &__rr-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right bottom;
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    width: 50%;
+    height: 50%;
+    z-index: 1;
+    @media (max-width: ($lg)) {
+      display: none;
+    }
+  }
   &__container {
+    position: relative;
+    z-index: 2;
   }
   &__inner {
   }
@@ -927,6 +1015,20 @@ body {
   background-color: $color-bg;
   @include av("padding-top", 112, 23);
   @include av("padding-bottom", 111, 50);
+  &__dec {
+    position: absolute;
+    width: 108.059px;
+    height: 132.299px;
+    z-index: 10;
+    left: -55px;
+    bottom: -35px;
+    @media (max-width: ($md)) {
+      width: 49.586px;
+      height: 60.709px;
+      left: -18px;
+      bottom: -11px;
+    }
+  }
   &__container {
     display: flex;
     column-gap: 33px;
@@ -940,6 +1042,7 @@ body {
     }
   }
   &__player {
+    position: relative;
     width: 49%;
     @media (max-width: ($lg)) {
       width: 100%;
@@ -976,8 +1079,25 @@ body {
   @include av("padding-top", 140, 37);
   @include av("padding-bottom", 135, 117);
   background-color: $color-light-bg;
+  position: relative;
+  &__l-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 46%;
+    height: 46%;
+    z-index: 1;
+    @media (max-width: ($lg)) {
+      width: 40%;
+      height: 40%;
+    }
+  }
   &__container {
     position: relative;
+    z-index: 2;
   }
   &__inner {
     width: 100%;
@@ -1176,7 +1296,39 @@ body {
 // Trials
 .trial {
   @include av("padding-bottom", 96, 49);
-
+  position: relative;
+  &__l-dec {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    width: 46%;
+    height: 46%;
+    z-index: 1;
+    @media (max-width: ($lg)) {
+      display: none;
+    }
+  }
+  &__small-dec {
+    position: absolute;
+    left: -66px;
+    top: -77px;
+    z-index: 2;
+    width: 120.393px;
+    height: 121.721px;
+    @media (max-width: ($sm)) {
+      width: 78.06px;
+      height: 73.068px;
+      left: -37px;
+      top: -38px;
+    }
+  }
+  &__container {
+    position: relative;
+    z-index: 2;
+  }
   &__header {
     text-align: center;
     @include av("margin-bottom", 50, 25);
@@ -1200,6 +1352,7 @@ body {
     }
   }
   &__body {
+    position: relative;
   }
   &__input {
     border-radius: 5.336px;
