@@ -16,6 +16,7 @@ function app() {
     burgToggleBtn.addEventListener("click", () => {
       burgToggleBtn.classList.toggle("active");
       headerBody.classList.toggle("active");
+      document.body.style.overflow = headerBody.classList.contains("active") ? "hidden" : "visible";
     });
   }
 
