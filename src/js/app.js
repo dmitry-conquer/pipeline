@@ -1,5 +1,4 @@
 import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
-import MicroModal from "micromodal";
 import "./modules/sliders.js";
 import "./modules/tabs.js";
 
@@ -108,13 +107,13 @@ function app() {
    */
   const formPopup = document.getElementById("form-popup");
   if (formPopup) {
-    const formPopupDelay = 1;
+    const { popupDelay } = formPopup.dataset;
     setTimeout(() => {
       MicroModal.show("form-popup", {
         disableScroll: true,
         disableFocus: true,
       });
-    }, formPopupDelay * 1000);
+    }, popupDelay * 1000);
   }
 
   /**
