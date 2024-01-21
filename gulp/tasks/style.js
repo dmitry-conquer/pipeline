@@ -22,7 +22,6 @@ export const style = () => {
         outputStyle: "expanded",
       }),
     )
-    .pipe(gcmq())
     .pipe(app.plugins.if(app.isBuild, postcss(plugins)))
     .pipe(
       app.plugins.rename({
