@@ -123,7 +123,26 @@ function app() {
    *
    */
   AOS.init({
-    once: true, 
+    once: true,
+  });
+
+  /**
+   *
+   * Play VIMEO video
+   *
+   */
+  const videos = document.querySelectorAll(".vimeo-video");
+  videos.forEach(video => {
+    if (video) {
+      const player = new Vimeo.Player(video.querySelector("iframe"));
+      const playVideoButton = video.querySelector(".video-play");
+      const videoPlaceholder = video.querySelector(".video-placeholder");
+      playVideoButton.addEventListener("click", () => {
+        player.play();
+        playVideoButton.style.display = "none";
+        videoPlaceholder.style.display = "none";
+      });
+    }
   });
 }
 document.addEventListener("DOMContentLoaded", app);
