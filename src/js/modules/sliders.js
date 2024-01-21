@@ -1,8 +1,42 @@
-import Swiper, { Autoplay } from "swiper";
+import Swiper, { Autoplay, Navigation } from "swiper";
 
 const infinitySlides = document.querySelectorAll(".slider-infinity");
 const featuresInner = document.querySelector(".features__inner");
+const pricingSection = document.querySelector(".pricing__content");
 let featuresSlider = null;
+let pricingSlider = null;
+
+function initPricingSlider() {
+  if (pricingSection) {
+    if (window.innerWidth < 1024 && !pricingSlider) {
+      pricingSlider = new Swiper(".pricing__content", {
+        wrapperClass: "pricing__columns",
+        slideClass: "column-pricing",
+        modules: [Navigation],
+        spaceBetween: 16,
+        speed: 1000,
+        grabCursor: true,
+        centeredSlides: true,
+        initialSlide: 1,
+        breakpoints: {
+          0: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 1.7,
+          },
+        },
+        navigation: {
+          prevEl: ".navigation-btn_prev",
+          nextEl: ".navigation-btn_next",
+        }
+      });
+    } else if (window.innerWidth >= 1024 && pricingSlider) {
+      pricingSlider.destroy();
+      pricingSlider = null;
+    }
+  }
+}
 
 function initFeaturesSlider() {
   if (featuresInner) {
@@ -37,9 +71,7 @@ infinitySlides.forEach(slider => {
       },
       slidesPerView: "auto",
       loop: true,
-      watchSlidesProgress: true,
       grabCursor: true,
-
       breakpoints: {
         0: {
           spaceBetween: 20,
@@ -51,5 +83,10 @@ infinitySlides.forEach(slider => {
     });
   }
 });
+
+initPricingSlider();
 initFeaturesSlider();
-window.addEventListener("resize", initFeaturesSlider);
+window.addEventListener("resize", () => {
+  initPricingSlider();
+  initFeaturesSlider();
+});
