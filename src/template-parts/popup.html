@@ -1,24 +1,47 @@
-<!-- 
-<button data-micromodal-trigger="demo-modal" type="button">Open MODAL</button>
-
-<div class="modal" id="demo-modal" aria-hidden="true" data-micromodal-close>
-   <div class="modal__body">
-      <div
-         class="modal__content"
-         role="dialog"
-         aria-modal="true"
-         aria-labelledby="demo-modal-title-1"
-      >
-         <div class="modal__header">
-            <p class="modal__title" id="demo-modal-title-1"></p>
-         </div>
-         <div class="modal__main"></div>
-         <div class="modal__footer">
-            <button class="modal__close" aria-label="Закрити вікно" data-micromodal-close>
-               Закрити
-            </button>
-         </div>
+<div class="modal tabs" id="form-popup" aria-hidden="true">
+  <div class="modal__body">
+    <div class="modal__content" role="dialog" aria-modal="true">
+      <div class="modal__header">
+        <button class="modal__close" type="button" aria-label="Close modal" data-micromodal-close>
+          <img src="./img/close.svg" alt="Close modal" />
+        </button>
+        <p class="modal__title">Start Your 14-Day Free Trial Today!</p>
+        <div class="modal__buttons">
+          <div class="modal__button active-tab-button" role="button" data-tab-button="tab_1">
+            <p class="modal__button-title">Your Info</p>
+            <p class="modal__button-text">Sign Up Below</p>
+            <svg class="modal__button-label" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none">
+              <path d="M13.0074 0.0830078L25.1383 21.0942H0.876642L13.0074 0.0830078Z" fill="white" />
+            </svg>
+          </div>
+          <div class="modal__button" role="button" data-tab-button="tab_2">
+            <p class="modal__button-title">Get Started</p>
+            <p class="modal__button-text">Free Trial Next Steps</p>
+            <svg class="modal__button-label" xmlns="http://www.w3.org/2000/svg" width="26" height="22" viewBox="0 0 26 22" fill="none">
+              <path d="M13.0074 0.0830078L25.1383 21.0942H0.876642L13.0074 0.0830078Z" fill="white" />
+            </svg>
+          </div>
+        </div>
       </div>
-   </div>
+      <div class="modal__tabs">
+        <div class="modal__tab-content active-tab-content" data-tab-content="tab_1">
+          <!-- Content tab 1 -->
+          <form action="#" class="modal-form">
+            <input type="text" class="modal-form__input" placeholder="Company Name" />
+            <input type="text" class="modal-form__input" placeholder="Full Name" />
+            <input type="text" class="modal-form__input" placeholder="Company Name" />
+            <div class="modal__one-half">
+              <input type="email" class="modal-form__input" placeholder="Email Address" />
+              <input type="tel" class="modal-form__input" placeholder="Phone Number" />
+            </div>
+            <a href="#" class="modal-form__button">Let’s Get Started</a>
+          </form>
+        </div>
+        <div class="modal__tab-content" data-tab-content="tab_2">
+          <!-- Content tab 2 -->
+          Content tab 2
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
- -->

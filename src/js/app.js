@@ -1,4 +1,5 @@
 import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
+import MicroModal from "micromodal";
 import "./modules/sliders.js";
 import "./modules/tabs.js";
 
@@ -99,5 +100,18 @@ function app() {
       });
     }
   });
+
+  /**
+   *
+   * Popup
+   *
+   */
+  const formPopup = document.getElementById("form-popup");
+  if (formPopup) {
+    MicroModal.show("form-popup", {
+      disableScroll: true,
+      disableFocus: true,
+    });
+  }
 }
 document.addEventListener("DOMContentLoaded", app);
