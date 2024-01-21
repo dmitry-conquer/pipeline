@@ -108,10 +108,22 @@ function app() {
    */
   const formPopup = document.getElementById("form-popup");
   if (formPopup) {
-    MicroModal.show("form-popup", {
-      disableScroll: true,
-      disableFocus: true,
-    });
+    const formPopupDelay = 1;
+    setTimeout(() => {
+      MicroModal.show("form-popup", {
+        disableScroll: true,
+        disableFocus: true,
+      });
+    }, formPopupDelay * 1000);
   }
+
+  /**
+   *
+   * AOS lib
+   *
+   */
+  AOS.init({
+    once: true, 
+  });
 }
 document.addEventListener("DOMContentLoaded", app);

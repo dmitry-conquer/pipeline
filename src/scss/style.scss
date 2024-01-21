@@ -185,7 +185,6 @@ body {
   min-height: 100%;
 
   main {
-    min-height: 1000vh; // change!
     background: #fff;
     flex: 1 1 auto;
   }
@@ -409,6 +408,7 @@ body {
   @include av("padding-top", 221, 76);
   @include av("padding-bottom", 210, 61);
   &__l-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left bottom;
@@ -420,6 +420,7 @@ body {
     z-index: 1;
   }
   &__rg-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
@@ -434,6 +435,7 @@ body {
     }
   }
   &__rr-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
@@ -453,25 +455,29 @@ body {
   &__container {
     display: flex;
     align-items: flex-start;
-    column-gap: 37px;
+    column-gap: 50px;
     position: relative;
+    padding-left: 70px;
     z-index: 6;
     @media (max-width: ($lg)) {
       flex-direction: column;
       align-items: center;
       row-gap: 80px;
+      padding-left: 22px;
     }
     @media (max-width: ($sm)) {
       row-gap: 46.2px;
     }
   }
   &__column {
-    width: 50%;
+
+  }
+  &__contet {
+
+    width: 45%;
     @media (max-width: ($lg)) {
       width: 100%;
     }
-  }
-  &__contet {
   }
   &__title {
     color: #fff;
@@ -497,12 +503,16 @@ body {
     }
   }
   &__button {
-    width: 227px;
+    width: 273px;
     @media (max-width: ($sm)) {
       margin: 0 auto;
     }
   }
   &__video {
+    width: 55%;
+    @media (max-width: ($lg)) {
+      width: 100%;
+    }
   }
 }
 .video-hero {
@@ -555,12 +565,17 @@ body {
     @include av("height", 653, 158);
     background-repeat: no-repeat;
     background-size: contain;
+    @media (max-width: ($xl)) {
+      left: -5%;
+      bottom: -5%;
+    }
   }
   &__inner {
     display: flex;
     align-items: flex-start;
     column-gap: 37px;
     padding-left: 173px;
+    justify-content: flex-end;
     @media (max-width: ($lg)) {
       flex-direction: column;
       text-align: center;
@@ -616,6 +631,7 @@ body {
     color: #fff;
     font-family: Outfit;
     font-size: 15px;
+    line-height: 1.5;
     a {
       transition: color 0.3s ease;
     }
@@ -723,6 +739,7 @@ body {
   @include av("padding-bottom", 115, 41);
   position: relative;
   &__lr-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left bottom;
@@ -831,9 +848,18 @@ body {
 .solutions-part {
   &:nth-child(1) {
     margin-bottom: 42px;
+    @media (max-width: ($sm)) {
+       margin-bottom: 22px;
+    }
   }
   &:nth-child(2) {
     margin-bottom: 78px;
+    @media (max-width: ($lg)) {
+      margin-bottom: 42px;
+    }
+    @media (max-width: ($sm)) {
+       margin-bottom: 22px;
+    }
   }
   &__title {
     position: relative;
@@ -915,6 +941,7 @@ body {
   @include av("padding-bottom", 136, 75);
   position: relative;
   &__rr-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right bottom;
@@ -1081,6 +1108,7 @@ body {
   background-color: $color-light-bg;
   position: relative;
   &__l-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left bottom;
@@ -1298,6 +1326,7 @@ body {
   @include av("padding-bottom", 96, 49);
   position: relative;
   &__l-dec {
+    pointer-events: none;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left bottom;
@@ -1312,6 +1341,7 @@ body {
     }
   }
   &__small-dec {
+    pointer-events: none;
     position: absolute;
     left: -66px;
     top: -77px;
@@ -1360,14 +1390,20 @@ body {
     width: 100%;
     height: 57px;
     padding: 0 29px;
+    color: #919191;
+    @include av("font-size", 20, 16);
     &::placeholder {
       color: #919191;
       @include av("font-size", 20, 16);
     }
-    margin-bottom: 11px;
+    &:not(:last-child) {
+      margin-bottom: 11px;
+    }
     @media (max-width: ($sm)) {
       height: 37px;
       padding: 0 13px;
+    }
+    select {
     }
   }
   &__one-third {
@@ -1381,6 +1417,7 @@ body {
     }
     @media (max-width: ($sm)) {
       flex-wrap: wrap;
+      margin-bottom: 11px;
       input:nth-child(1) {
         width: 100%;
       }
@@ -1844,6 +1881,8 @@ body {
     width: 100%;
     height: 100%;
     background-color: #00000057;
+    padding: 45px 16px;
+    overflow: auto;
   }
   &__content {
     position: relative;
@@ -1867,10 +1906,7 @@ body {
     width: 50%;
     text-align: center;
     color: #fff;
-    font-size: 20px;
-    @media (max-width: ($sm)) {
-      font-size: 18px;
-    }
+    @include av('font-size', 20, 16);
     &.active-tab-button {
       .modal__button-label {
         display: block;
@@ -1943,6 +1979,9 @@ body {
     }
     &:not(:last-child) {
       margin-bottom: 11px;
+    }
+    @media (max-width: ($sm)) {
+      height: 35px;
     }
   }
   &__button {
