@@ -71,7 +71,7 @@ function initInfinitySlider() {
         },
         slidesPerView: "auto",
         loop: true,
-        grabCursor: true,
+        allowTouchMove: false,
         breakpoints: {
           0: {
             spaceBetween: 35,

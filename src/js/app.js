@@ -1,4 +1,6 @@
 import { useDynamicAdapt } from "./modules/dynamicAdapt.js";
+import AOS from 'aos';
+import MicroModal from "micromodal";
 import "./modules/sliders.js";
 import "./modules/tabs.js";
 
